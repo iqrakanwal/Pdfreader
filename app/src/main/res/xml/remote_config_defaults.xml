@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>is_interstitial_active</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>is_medium_native_active</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>is_small_native_active</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>is_small_banner_active</key>
+        <value>true</value>
+    </entry>
+
+    <entry>
+        <key>priority_interstitial</key>
+        <value>2</value>
+    </entry>
+    <entry>
+        <key>priority_medium_native</key>
+        <value>2</value>
+    </entry>
+    <entry>
+        <key>priority_small_native</key>
+        <value>2</value>
+    </entry>
+    <entry>
+        <key>priority_small_banner</key>
+        <value>2</value>
+    </entry>
+
+</defaultsMap>

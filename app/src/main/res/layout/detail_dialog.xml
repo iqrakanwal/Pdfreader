@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/colorPrimaryDark"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/titlelayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/purple_700"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/pdfinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins"
+            android:text="File Info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/fisrtlya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:orientation="horizontal"
+
+        android:padding="@dimen/_2sdp"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondlya">
+        <!--
+        <TextView
+            android:id="@+id/filepath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="File Path:"
+            android:textSize="@dimen/_15sdp" />-->
+
+
+        <TextView
+            android:id="@+id/filepathname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:maxLines="1"
+            android:text="dfgdfgvdfvdf"
+            android:textColor="?attr/textcolor"
+
+            android:textSize="@dimen/_15sdp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/secondlya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlelayout">
+
+
+        <!--   <TextView
+            android:id="@+id/filetile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins"
+            android:maxLines="1"
+
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="File Name:"
+            android:textSize="@dimen/_15sdp" />-->
+
+
+        <TextView
+            android:id="@+id/filetitlename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:maxLines="1"
+            android:text="dfgdfgvdfvdf"
+            android:textColor="?attr/textcolor"
+            android:textSize="@dimen/_15sdp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/thirdlya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fisrtlya">
+        <!--
+
+        <TextView
+            android:id="@+id/filedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:maxLines="1"
+
+            android:text="File Date:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
+-->
+
+
+        <TextView
+            android:id="@+id/filedatename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:maxLines="1"
+            android:text="dfgdfgvdfvdf"
+            android:textColor="?attr/textcolor"
+
+
+            android:textSize="@dimen/_15sdp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/fourtyhlya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdlya">
+
+        <!--        <TextView
+            android:id="@+id/filesize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:text="File Size:"
+            android:textSize="@dimen/_15sdp" />-->
+
+        <TextView
+            android:id="@+id/filesizename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="dfgdfgvdfvdf"
+            android:textColor="?attr/textcolor"
+            android:fontFamily="@font/poppins"
+
+
+            android:textSize="@dimen/_15sdp"
+           />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

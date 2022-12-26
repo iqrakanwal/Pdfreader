@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color -->
+    <item android:drawable="@color/white" />
+
+    <!-- Logo at the center of the screen -->
+    <item
+        android:width="@dimen/_120sdp"
+        android:height="@dimen/_120sdp"
+        android:bottom="55dp"
+        android:gravity="center">
+        <bitmap android:src="@drawable/app_icon" />
+    </item>
+
+</layer-list>

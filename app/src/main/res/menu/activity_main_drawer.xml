@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_about_us"
+            android:checkableBehavior="single"
+            android:title="@string/about_us" />
+
+        <item
+            android:id="@+id/language"
+            android:icon="@drawable/ic_translate"
+            android:title="@string/language"/>
+
+      <item android:id="@+id/theme"
+            android:icon="@drawable/ic_brush_svgrepo_com"
+            android:title="@string/theme"/>
+
+        <item
+            android:id="@+id/nav_share_app"
+            android:icon="@drawable/ic_share"
+            android:title="@string/share_app"/>
+
+        <item
+            android:id="@+id/nav_rate_us"
+            android:icon="@drawable/ic_rate_us"
+            android:title="@string/rate_us"/>
+
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_privacy_policy"
+            android:title="@string/privacy_policy"/>
+
+        <item
+            android:id="@+id/nav_remove_ads"
+            android:icon="@drawable/ic_remove_add"
+            android:title="@string/remove_ads"/>
+
+    </group>
+</menu>

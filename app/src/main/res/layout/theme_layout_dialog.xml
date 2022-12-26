@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimaryDark"
+ >
+
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/choose_theme"
+        android:textColor="?attr/textcolor"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView19"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="2dp"
+        >
+
+        <RadioButton
+            android:id="@+id/light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:buttonTint="@color/purple_700"
+            android:checked="true"
+            android:fontFamily="@font/poppins"
+
+            android:paddingLeft="8dp"
+            android:text="@string/light_theme"
+            android:textColor="?attr/textcolor"></RadioButton>
+
+
+        <RadioButton
+            android:id="@+id/dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/purple_700"
+            android:paddingLeft="8dp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/dark_theme"
+            android:textColor="?attr/textcolor">
+        </RadioButton>
+
+
+    <!--    <RadioButton
+            android:id="@+id/system_Ad"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/poppins"
+
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/purple_700"
+            android:paddingLeft="8dp"
+            android:text="@string/system"
+            android:textColor="?attr/textcolor"></RadioButton>-->
+
+
+
+    </RadioGroup>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/ok"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="end"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_marginEnd="30dp"-->
+    <!--        android:layout_below="@+id/radio"-->
+    <!--        android:layout_marginBottom="22dp"-->
+    <!--        android:fontFamily="sans-serif"-->
+    <!--        android:lineSpacingExtra="3sp"-->
+    <!--        android:text="OK"-->
+    <!--        android:textColor="#47cb74"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:textStyle="normal"-->
+    <!--/>-->
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radio"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:fontFamily="@font/poppins"
+
+        android:layout_marginBottom="22dp"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/cancel"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="normal" />
+
+
+</RelativeLayout>

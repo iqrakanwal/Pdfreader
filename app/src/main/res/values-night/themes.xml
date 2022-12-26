@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!--    <style name="Theme.FindMyPhone" parent="Theme.MaterialComponents.DayNight.NoActionBar">-->
+    <!--        &lt;!&ndash; Primary brand color. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/purple_200</item>-->
+    <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+    <!--        <item name="colorOnPrimary">@color/black</item>-->
+    <!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+    <!--        <item name="colorSecondary">@color/teal_200</item>-->
+    <!--        <item name="colorSecondaryVariant">@color/teal_200</item>-->
+    <!--        <item name="colorOnSecondary">@color/black</item>-->
+    <!--        &lt;!&ndash; Status bar color. &ndash;&gt;-->
+    <!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--    </style>-->
+    <style name="Theme.PdfReader" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="splashhaeder">@drawable/ic_headerblack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="toolbarcolor">@color/toolbarcolordark</item>
+        <item name="tonescreenviewcolor">@color/tonescreenviewdark</item>
+        <item name="textcolor">@color/textcolordark</item>
+        <item name="textcolorfortrue">@color/white</item>
+
+        <item name="viewbackground">@color/viewblack</item>
+        <item name="textcolorforfalse">@color/white</item>
+        <item name="adtextcolor">@color/white</item>
+        <item name="sytemTonesBackground">@color/blackish</item>
+        <item name="adbuttontextcolor">@color/white</item>
+        <item name="shorttextformelodyflase">@color/white</item>
+
+        <item name="settingfragmentbackground">@color/backgroundsettingfragmentdark</item>
+        <item name="drawerbackground">@color/drawerbackgrounddark</item>
+
+
+
+        <item name="viewcolor">@color/viewdark</item>
+        <item name="textcolorlight">@color/textcolordark</item>
+        <item name="textcolordark">@color/textcolordark</item>
+        <item name="containercolor">@color/containercolordark</item>
+        <item name="primaryTitleColor">@color/primaryTitleColorNight</item>
+        <item name="primaryDescriptionColor">@color/primaryDescriptionColorNight</item>
+        <item name="rateusColor">@color/rateusColordark</item>
+        <item name="primaryDateColor">@color/primaryDateColorNight</item>
+        <item name="primaryBackgroundColor">@color/primaryBackgroundColorNight</item>
+        <item name="primaryCardBackgroundColor">@color/primaryCardBackgroundColorNight</item>
+    </style>
+    <style name="AppTheme.NoActionBar2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+    <style name="Theme.PdfReader.AdTheme" >
+        <item name="android:background">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+</resources>

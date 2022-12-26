@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PDF Reader</string>
+    <string name="share_chooser">حدد التطبيق لإرسال رسالة ...</string>
+    <string name="delete">حذف</string>
+    <string name="header_text">من السهل قراءة ملفات PDF</string>
+    <string name="todo">TODO</string>
+    <string name="pdf_reader_amp_viewer">قارئ PDF</string>
+    <string name="file_name">اسم الملف :</string>
+    <string name="file_path">مسار الملف:</string>
+    <string name="file_sizeg">حجم الملف:</string>
+    <string name="file_modified">تم تعديل الملف:</string>
+    <string name="file_size">بحجم :</string>
+    <string name="file_date">تم إنشاؤها على :</string>
+    <string name="file_status">حالة :</string>
+    <string name="pdf_reader">PDF Reader</string>
+    <string name="how_would_you_rate_app">أعطنا 5 نجوم</string>
+    <string name="dis">يلهمنا تصنيف 5 نجوم لخدمتك بشكل أفضل !!!</string>
+    <string name="easy_to_convert_your_file_images_to_create_and_edit_pdf_s">من السهل قراءة ملفات Pdf</string>
+    <string name="information">معلومة</string>
+    <string name="are_you_sure_you_want_to_delete">هل أنت متأكد أنك تريد حذف؟</string>
+    <string name="choose_one">يختار</string>
+    <string name="share_app_message">مشاركة التطبيق</string>
+    <string name="app_more_app_url">https://artysoul.net/privacy-policy/</string>
+    <string name="error_no_browser">خطأ</string>
+    <string name="about">معلومات عنا</string>
+    <string name="appversion">نسخة التطبيق</string>
+    <string name="close">يغلق</string>
+    <string name="are_you_sure_you_want_to_exit">هل أنت متأكد أنك تريد الخروج؟</string>
+    <string name="exit">مخرج</string>
+    <string name="text_Ad">Ad</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="share_app">يشارك</string>
+    <string name="search_for_tools">ابحث في ملفات PDF</string>
+    <string name="pdf_type" translatable="false">application/pdf</string>
+    <string name="i_have_attached_pdfs_to_this_message">لقد قمت بإرفاق ملف (ملفات) بهذه الرسالة</string>
+    <string name="rate_us">قيمنا</string>
+    <string name="privacy_policy">سياسة خاصة</string>
+    <string name="remove_ads">ازالة الاعلانات</string>
+    <string name="restore_purchasing">استعادة الشراء</string>
+    <string name="cancel">يلغي</string>
+    <string name="developer" >استوديوهات Artysoul</string>
+    <string name="language">لغة</string>
+    <string name="rename">إعادة تسمية</string>
+    <string name="snackbar_name_not_blank">empty</string>
+    <string name="snackbar_file_renamed">rename</string>
+    <string name="snackbar_file_not_renamed">not remained</string>
+    <string name="dialog_file_rename_title">إعادة تسمية الملف</string>
+    <string name="dialog_file_rename_message">rename</string>
+    <string name="ok">ok</string>
+    <string name="to_read_amp_edit_documents_on_your_device_please_allow_read_to_access_all_your_file"><![CDATA[To read & edit documents on your device, please allow read to access all your file.]]></string>
+    <string name="verticalview">VerticalView</string>
+    <string name="nightmode">الوضع الليلي</string>
+    <string name="text_ui_mode">klj</string>
+    <string name="lorem_ipsum">انتقل إلى صفحة</string>
+    <string name="goto_page">انتقل إلى صفحة</string>
+    <string name="choose_theme">اختر نمطا</string>
+    <string name="light_theme">مظهر خفيف</string>
+    <string name="dark_theme">مظهر داكن</string>
+    <string name="force_dark_description">Dark theme is being applied at rendering time by Android Q and above only.
+        Force Dark featured should be enabled in activity theme using android:forceDarkAllowed attribute (applicable for
+        Light theme only)
+    </string>
+    <string name="local_dark_description">Make this activity always dark using getDelegate.setLocalDarkMode API</string>
+    <string name="ignore_force_dark_description">This activity is always Light. It ignores Dark Theme toggle and
+        Override force-dark option from developer settings
+    </string>
+    <string name="activity_always_dark_title">Always Dark Activity</string>
+    <string name="activity_force_dark_title">Force Dark Activity</string>
+    <string name="activity_ignore_force_dark_title">Ignore Developer Option</string>
+    <string name="hi_there">Hi there!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme">سمة</string>
+    <string name="system">System default</string>
+    <string name="go">اذهب</string>
+    <string name="hori">عرض أفقي</string>
+    <string name="pdf_reader_app_is_supported_by_ads_but_now_you_can_remove_them">تطبيق قارئ PDF مدعوم بالإعلانات ولكن يمكنك الآن إزالتها</string>
+    <string name="con">يكمل</string>
+    <string name="developedby">طورت بواسطة :</string>
+    <string name="name">اسم :</string>
+</resources>

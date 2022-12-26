@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">پی ڈی ایف ریڈر</string>
+    <string name="share_chooser">پیغام بھیجنے کے لیے ایپ منتخب کریں…</string>
+    <string name="delete">حذف کریں۔</string>
+    <string name="header_text">پی ڈی ایف پڑھنے میں آسان</string>
+    <string name="todo">TODO</string>
+    <string name="pdf_reader_amp_viewer">پی ڈی ایف ریڈر</string>
+    <string name="file_name">فائل کا نام :</string>
+    <string name="file_path">فائل کا راستہ:</string>
+    <string name="file_sizeg">فائل کا ناپ:</string>
+    <string name="file_modified">فائل میں ترمیم کی گئی:</string>
+    <string name="file_size">سائز:</string>
+    <string name="file_date">پر بنایا :</string>
+    <string name="file_status">حالت :</string>
+    <string name="pdf_reader">قارئ PDF</string>
+    <string name="how_would_you_rate_app">ہمیں 5 ستارے دیں۔</string>
+    <string name="dis">5 ستاروں کی درجہ بندی ہمیں آپ کی بہتر خدمت کرنے کی ترغیب دیتی ہے!!!</string>
+    <string name="easy_to_convert_your_file_images_to_create_and_edit_pdf_s">پی ڈی ایف فائلوں کو پڑھنے میں آسان</string>
+    <string name="information">معلومات</string>
+    <string name="are_you_sure_you_want_to_delete">کیا آپ واقعی حذف کرنا چاہتے ہیں؟</string>
+    <string name="choose_one">منتخب کریں۔</string>
+    <string name="share_app_message">درخواست شیئر کریں۔</string>
+    <string name="app_more_app_url">https://artysoul.net/privacy-policy/</string>
+    <string name="error_no_browser">غلطی</string>
+    <string name="about">ہمارے بارے میں</string>
+    <string name="appversion">: ایپ ورژن</string>
+    <string name="close">بند کریں</string>
+    <string name="are_you_sure_you_want_to_exit">کیا آپ کو یقین ہے کہ آپ ہیاں سے نکلنا چاہتے ہیں؟</string>
+    <string name="exit">باہر نکلیں</string>
+    <string name="text_Ad">Ad</string>
+    <string name="about_us">ہمارے بارے میں</string>
+    <string name="share_app">بانٹیں</string>
+    <string name="search_for_tools">پی ڈی ایف فائلیں تلاش کریں۔</string>
+    <string name="pdf_type" translatable="false">application/pdf</string>
+    <string name="i_have_attached_pdfs_to_this_message">میں نے اس پیغام کے ساتھ فائلیں منسلک کر دی ہیں۔</string>
+    <string name="rate_us">ہمیں درجہ دیں۔</string>
+    <string name="privacy_policy">رازداری کی پالیسی</string>
+    <string name="remove_ads">اشتہارات کو ہٹا دیں۔</string>
+    <string name="restore_purchasing">خریداری کو بحال کریں۔</string>
+    <string name="cancel">منسوخ کریں۔</string>
+    <string name="developer" >آرٹیسول اسٹوڈیوز</string>
+    <string name="language">زبان</string>
+    <string name="rename">نام تبدیل کریں۔</string>
+    <string name="snackbar_name_not_blank">empty</string>
+    <string name="snackbar_file_renamed">rename</string>
+    <string name="snackbar_file_not_renamed">not remained</string>
+    <string name="dialog_file_rename_title">فائل کا نام تبدیل کریں۔</string>
+    <string name="dialog_file_rename_message">rename</string>
+    <string name="ok">ok</string>
+    <string name="to_read_amp_edit_documents_on_your_device_please_allow_read_to_access_all_your_file"><![CDATA[To read & edit documents on your device, please allow read to access all your file.]]></string>
+    <string name="verticalview">VerticalView</string>
+    <string name="nightmode">نائٹ موڈ</string>
+    <string name="text_ui_mode">klj</string>
+    <string name="lorem_ipsum">صفحے پر جائیں</string>
+    <string name="goto_page">صفحے پر جائیں</string>
+    <string name="choose_theme">تھیم منتخب کریں۔</string>
+    <string name="light_theme">ہلکی تھیم</string>
+    <string name="dark_theme">ڈارک تھیم</string>
+    <string name="force_dark_description">Dark theme is being applied at rendering time by Android Q and above only.
+        Force Dark featured should be enabled in activity theme using android:forceDarkAllowed attribute (applicable for
+        Light theme only)
+    </string>
+    <string name="local_dark_description">Make this activity always dark using getDelegate.setLocalDarkMode API</string>
+    <string name="ignore_force_dark_description">This activity is always Light. It ignores Dark Theme toggle and
+        Override force-dark option from developer settings
+    </string>
+    <string name="activity_always_dark_title">Always Dark Activity</string>
+    <string name="activity_force_dark_title">Force Dark Activity</string>
+    <string name="activity_ignore_force_dark_title">Ignore Developer Option</string>
+    <string name="hi_there">Hi there!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme">خیالیہ</string>
+    <string name="system">System default</string>
+    <string name="go">جاؤ</string>
+    <string name="hori">افقی منظر</string>
+    <string name="pdf_reader_app_is_supported_by_ads_but_now_you_can_remove_them">پی ڈی ایف ریڈر ایپ اشتہارات کے ذریعے تعاون یافتہ ہے لیکن اب آپ انہیں ہٹا سکتے ہیں۔</string>
+    <string name="con">جاری رہے</string>
+    <string name="developedby">کی طرف سے تیار :</string>
+    <string name="name">نام :</string>
+</resources>

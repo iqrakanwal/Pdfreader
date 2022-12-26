@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/splashscreen"
+    android:id="@+id/app_nav">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.fragments.MainFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_main" >
+
+    </fragment>
+
+
+    <fragment android:id="@+id/splashscreen"
+        android:name="com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.fragments.SplashFragment"
+        android:label="fragmentsplash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashscreen_to_homeFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+
+</navigation>

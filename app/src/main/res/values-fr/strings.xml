@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PDF Reader</string>
+    <string name="share_chooser">Sélectionnez l\'application pour envoyer le message…</string>
+    <string name="delete">Supprimer</string>
+    <string name="header_text">PDF faciles à lire</string>
+    <string name="todo">TODO</string>
+    <string name="pdf_reader_amp_viewer">Lecteur PDF</string>
+    <string name="file_name">Nom de fichier :</string>
+    <string name="file_path">Chemin du fichier:</string>
+    <string name="file_sizeg">Taille du fichier:</string>
+    <string name="file_modified">Fichier modifié :</string>
+    <string name="file_size">Taille :</string>
+    <string name="file_date">Créé sur :</string>
+    <string name="file_status">Statut :</string>
+    <string name="pdf_reader">PDF Reader</string>
+    <string name="how_would_you_rate_app">Donnez-nous 5 étoiles</string>
+    <string name="dis">Une note de 5 étoiles nous inspire à mieux vous servir !!!</string>
+    <string name="easy_to_convert_your_file_images_to_create_and_edit_pdf_s">Fichiers PDF faciles à lire</string>
+    <string name="information">Information</string>
+    <string name="are_you_sure_you_want_to_delete">Etes-vous sûr que vous voulez supprimer?</string>
+    <string name="choose_one">Choisir</string>
+    <string name="share_app_message">Partager l\'application</string>
+    <string name="app_more_app_url">https://artysoul.net/privacy-policy/</string>
+    <string name="error_no_browser">Erreur</string>
+    <string name="about">À propos de nous</string>
+    <string name="appversion">Version de l\'application :</string>
+    <string name="close">Fermer</string>
+    <string name="are_you_sure_you_want_to_exit">Êtes-vous sûr de vouloir quitter?</string>
+    <string name="exit">Sortir</string>
+    <string name="text_Ad">Ad</string>
+    <string name="about_us">À propos de nous</string>
+    <string name="share_app">Partager</string>
+    <string name="search_for_tools">Rechercher des fichiers PDF</string>
+    <string name="pdf_type" translatable="false">application/pdf</string>
+    <string name="i_have_attached_pdfs_to_this_message">J\'ai joint des fichiers à ce message</string>
+    <string name="rate_us">Évaluez nous</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="remove_ads">Supprimez la pub</string>
+    <string name="restore_purchasing">Rétablir les achats</string>
+    <string name="cancel">Annuler</string>
+    <string name="developer" translatable="false">Studios Artysoul</string>
+    <string name="language">Langue</string>
+    <string name="rename">Renommer</string>
+    <string name="snackbar_name_not_blank">empty</string>
+    <string name="snackbar_file_renamed">rename</string>
+    <string name="snackbar_file_not_renamed">not remained</string>
+    <string name="dialog_file_rename_title">Renommer le fichier</string>
+    <string name="dialog_file_rename_message">rename</string>
+    <string name="ok">ok</string>
+    <string name="to_read_amp_edit_documents_on_your_device_please_allow_read_to_access_all_your_file"><![CDATA[To read & edit documents on your device, please allow read to access all your file.]]></string>
+    <string name="verticalview">VerticalView</string>
+    <string name="nightmode">Mode nuit</string>
+    <string name="text_ui_mode">klj</string>
+    <string name="lorem_ipsum">Aller à la page</string>
+    <string name="goto_page">Aller à la page</string>
+    <string name="choose_theme">Sélectionne un thème</string>
+    <string name="light_theme">Thème Lumière</string>
+    <string name="dark_theme">Thème sombre</string>
+    <string name="force_dark_description">Dark theme is being applied at rendering time by Android Q and above only.
+        Force Dark featured should be enabled in activity theme using android:forceDarkAllowed attribute (applicable for
+        Light theme only)
+    </string>
+    <string name="local_dark_description">Make this activity always dark using getDelegate.setLocalDarkMode API</string>
+    <string name="ignore_force_dark_description">This activity is always Light. It ignores Dark Theme toggle and
+        Override force-dark option from developer settings
+    </string>
+    <string name="activity_always_dark_title">Always Dark Activity</string>
+    <string name="activity_force_dark_title">Force Dark Activity</string>
+    <string name="activity_ignore_force_dark_title">Ignore Developer Option</string>
+    <string name="hi_there">Hi there!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme">Thème</string>
+    <string name="system">System default</string>
+    <string name="go">aller</string>
+    <string name="hori">Vue horizontale</string>
+    <string name="pdf_reader_app_is_supported_by_ads_but_now_you_can_remove_them">L\'application de lecteur PDF est prise en charge par les publicités, mais vous pouvez maintenant les supprimer</string>
+    <string name="con">Continuez</string>
+    <string name="developedby">Développé par :</string>
+    <string name="name">Nom :</string>
+</resources>

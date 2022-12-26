@@ -1,0 +1,101 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PDF Reader</string>
+    <string name="delete">Delete</string>
+    <string name="header_text">Easy to read PDFs. List all PDFs in one place.</string>
+    <string name="todo">TODO</string>
+    <string name="pdf_reader_amp_viewer">PDF Reader</string>
+    <string name="file_name"><bold> Name :</bold> </string>
+    <string name="file_path"><bold> Path :</bold></string>
+    <string name="file_sizeg"><bold> Size :</bold> </string>
+    <string name="file_modified"><bold> Modified :</bold> </string>
+    <string name="file_size"> Size : </string>
+    <string name="file_date">Created On : </string>
+    <string name="loading_advertisement">"ad loading "</string>
+    <string name="share_chooser">Select app to send message…</string>
+
+    <string name="file_status">Status : </string>
+    <string name="pdf_reader">PDF Reader</string>
+    <string name="how_would_you_rate_app">Give us 5-stars</string>
+    <string name="dis">A 5-Stars rating inspire us to serve you better!!!</string>
+    <string name="easy_to_convert_your_file_images_to_create_and_edit_pdf_s">Easy to Read Pdf Files</string>
+    <string name="information">Information</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to Delete?</string>
+    <string name="choose_one">Choose</string>
+    <string name="share_app_message">Share Application </string>
+    <string name="app_more_app_url">https://artysoul.net/privacy-policy/</string>
+    <string name="error_no_browser">error</string>
+    <string name="about">About Us</string>
+    <string name="appversion">App Version :</string>
+    <string name="close">Close</string>
+    <string name="are_you_sure_you_want_to_exit">Are you sure, you want to exit?</string>
+    <string name="exit">Exit</string>
+    <string name="text_Ad">Ad</string>
+    <string name="product_id" translatable="false">sku_removeads</string>
+
+    <string name="about_us">About US</string>
+    <string name="share_app">Share</string>
+    <string name="search_for_tools">Search PDF files</string>
+    <string name="pdf_type" translatable="false">application/pdf</string>
+    <string name="i_have_attached_pdfs_to_this_message">I have attached file(s) to this message</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="remove_ads">Remove Ads</string>
+    <string name="restore_purchasing">Restore Purchasing</string>
+    <string name="cancel">Cancel</string>
+    <string name="theme_pref_key">theme_pref</string>
+    <string name="developer" translatable="false">Artysoul Studios</string>
+    <string name="language">Language</string>
+    <string name="rename">Rename</string>
+    <string name="snackbar_name_not_blank">empty</string>
+    <string name="snackbar_file_renamed">rename</string>
+    <string name="snackbar_file_not_renamed">not remained</string>
+    <string name="dialog_file_rename_title">Rename File</string>
+    <string name="dialog_file_rename_message">rename</string>
+    <string name="ok">ok</string>
+    <string name="to_read_amp_edit_documents_on_your_device_please_allow_read_to_access_all_your_file"><![CDATA[To read documents, please allow access to your files.]]></string>
+    <string name="verticalview">Vertical View</string>
+    <string name="nightmode">Night Mode</string>
+    <string name="text_ui_mode">klj</string>
+    <string name="lorem_ipsum">Goto to page</string>
+    <string name="goto_page">Goto Page</string>
+    <string name="choose_theme">Select theme</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="force_dark_description">Dark theme is being applied at rendering time by Android Q and above only.
+        Force Dark featured should be enabled in activity theme using android:forceDarkAllowed attribute (applicable for
+        Light theme only)
+    </string>
+    <string name="local_dark_description">Make this activity always dark using getDelegate.setLocalDarkMode API</string>
+    <string name="ignore_force_dark_description">This activity is always Light. It ignores Dark Theme toggle and
+        Override force-dark option from developer settings
+    </string>
+    <string name="activity_always_dark_title">Always Dark Activity</string>
+    <string name="activity_force_dark_title">Force Dark Activity</string>
+    <string name="activity_ignore_force_dark_title">Ignore Developer Option</string>
+    <string name="hi_there">Hi there!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme">Theme</string>
+    <string name="system">System default</string>
+    <string name="go">go</string>
+    <string name="hori">Horizontal / Vertical View</string>
+    <string name="pdf_reader_app_is_supported_by_ads_but_now_you_can_remove_them">PDF reader app is supported by ads but now you can remove them</string>
+    <string name="con">Continue</string>
+    <string name="developedby">Developed by :</string>
+    <string name="name">Name :</string>
+    <string name="search">Stringwg</string>
+    <string name="Print">Print</string>
+    <string name="createpdf">Created Pdf</string>
+    <string name="open">Open</string>
+    <string name="create">Create</string>
+    <string name="converttopdf">Convert to Pdf</string>
+    <string name="pdf_file_name">PDF File name</string>
+    <string name="mode">Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="share">Share</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="you_don_t_have_any_document">You don’t have any document!</string>
+    <string name="text_exit_sheet_rate_title">you want to exit?</string>
+    <string name="text_tap_here">Tap here</string>
+</resources>

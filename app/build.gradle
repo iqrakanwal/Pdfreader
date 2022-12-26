@@ -1,0 +1,137 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id "kotlin-android-extensions"
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+//previous version code was 6 and version name was 1.5
+android {
+    compileSdk 32
+    defaultConfig {
+        applicationId "com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree"
+        minSdk 21
+        targetSdk 32
+        versionCode 7
+        versionName "1.6"
+        setProperty("archivesBaseName", "PDFReader_" + "_vc_" + versionCode + "_vn_" + versionName + "_")
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            multiDexEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "Banner", "ca-app-pub-9815370521649940/7448945724"
+            resValue "string", "Interstitial", "ca-app-pub-9815370521649940/1276405144"
+            resValue "string", "Second_Interstitial", "ca-app-pub-9815370521649940/1276405144"
+            resValue "string", "Native", "ca-app-pub-9815370521649940/4711101745"
+            resValue "string", "App_Open", "ca-app-pub-9815370521649940/4815538363"
+            resValue "string", "facebook_banner", "564747628228353_564750301561419"
+            resValue "string", "facebook_interstital", "564747628228353_564750384894744"
+            resValue "string", "facebook_native", "564747628228353_564750714894711"
+        }
+
+
+
+        debug{
+            multiDexEnabled false
+            minifyEnabled false
+            resValue "string", "Banner", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "Interstitial", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "Second_Interstitial", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "Native", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "App_Open", "ca-app-pub-3940256099942544/3419835294"
+            resValue "string", "facebook_banner", "IMG_16_9_APP_INSTALL#988978808682162_988980828681960"
+            resValue "string", "facebook_interstital", "IMG_16_9_APP_INSTALL#988978808682162_988980945348615"
+            resValue "string", "facebook_native", "IMG_16_9_APP_INSTALL#"
+
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    bundle{
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation "androidx.core:core-ktx:1.7.0"
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    //itext
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    implementation 'com.google.firebase:firebase-common-ktx:20.1.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha04"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.facebook.android:audience-network-sdk:6.+'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0'
+    //print
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+   implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+   //implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+   // api 'com.github.barteksc:pdfium-android:1.9.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.firebase:firebase-config-ktx'
+
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
+    implementation "io.insert-koin:koin-android-compat:3.1.6"
+    implementation "io.insert-koin:koin-androidx-workmanager:3.1.6"
+    implementation "io.insert-koin:koin-androidx-navigation:3.1.6"
+    implementation "io.insert-koin:koin-androidx-compose:3.1.6"
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation("com.android.billingclient:billing-ktx:4.1.0")
+    implementation "com.google.android.gms:play-services-ads:20.6.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
+    implementation "com.github.ybq:Android-SpinKit:1.4.0"
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.test:core:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

@@ -1,0 +1,192 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Light application theme. -->
+    <style name="AppTheme.Base.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="statusBarColor">@color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="sytemTonesBackground">@color/griesh</item>
+        <item name="toolbarcolor">@color/toolbarcolor</item>
+        <item name="textcolorlight">@color/textcolordark</item>
+        <item name="textcolordark">@color/textcolorligh</item>
+        <item name="textcolor">@color/textcolorligh</item>
+        <item name="adbackgroundcolr">@drawable/lightadbg</item>
+        <item name="adbuttontextcolor">@color/white</item>
+        <item name="textcolorfortrue">@color/white</item>
+        <item name="tonescreenviewcolor">@color/tonescreenviewlight</item>
+        <item name="textcolorforfalse">@color/black</item>
+        <item name="shorttextformelodyflase">@color/grey</item>
+        <item name="drawerbackground">@color/drawerbackgroundlight</item>
+        <item name="containercolor">@color/containercolorlight</item>
+        <item name="adtextcolor">@color/containercolorlight</item>
+        <item name="viewcolor">@color/viewlight</item>
+        <item name="appbartheme">@style/MyOverflowButtonStyle</item>
+        <item name="primaryTitleColor">@color/primaryTitleColor</item>
+        <item name="viewbackground">@color/viewwhite</item>
+        <item name="primaryDescriptionColor">@color/primaryDescriptionColor</item>
+        <item name="rateusColor">@color/rateusColor</item>
+        <item name="settingfragmentbackground">@color/backgroundsettingfragmentwhite</item>
+        <item name="primaryDateColor">@color/primaryDateColor</item>
+        <item name="primaryBackgroundColor">@color/primaryBackgroundColor</item>
+        <item name="primaryCardBackgroundColor">@color/primaryCardBackgroundColor</item>
+    </style>
+
+    <!-- Night application theme. -->
+    <style name="AppTheme.Base.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="statusBarColor">#292929</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="toolbarcolor">@color/toolbarcolordark</item>
+        <item name="tonescreenviewcolor">@color/tonescreenviewdark</item>
+        <item name="textcolor">@color/textcolordark</item>
+        <item name="adbackgroundcolr">@drawable/darkadbg</item>
+        <item name="textcolorfortrue">@color/white</item>
+        <item name="viewbackground">@color/viewblack</item>
+        <item name="textcolorforfalse">@color/white</item>
+        <item name="adtextcolor">@color/white</item>
+        <item name="sytemTonesBackground">@color/blackish</item>
+        <item name="adbuttontextcolor">@color/white</item>
+        <item name="shorttextformelodyflase">@color/white</item>
+        <item name="settingfragmentbackground">@color/backgroundsettingfragmentdark</item>
+        <item name="drawerbackground">@color/drawerbackgrounddark</item>
+        <item name="viewcolor">@color/viewdark</item>
+        <item name="textcolorlight">@color/textcolordark</item>
+        <item name="textcolordark">@color/textcolorligh</item>
+        <item name="containercolor">@color/containercolordark</item>
+        <item name="primaryTitleColor">@color/primaryTitleColorNight</item>
+        <item name="primaryDescriptionColor">@color/primaryDescriptionColorNight</item>
+        <item name="rateusColor">@color/rateusColordark</item>
+        <item name="primaryDateColor">@color/primaryDateColorNight</item>
+        <item name="primaryBackgroundColor">@color/primaryBackgroundColorNight</item>
+        <item name="primaryCardBackgroundColor">@color/primaryCardBackgroundColorNight</item>
+    </style>
+
+
+    <style name="FullScreenThemeWithTitle" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <color name="textcolordark">#fbfffc</color>
+    <color name="textcolorligh">#333333</color>
+    <color name="backgroundsettingfragmentwhite">#ffffff</color>
+    <color name="backgroundsettingfragmentdark">#1c1c1c</color>
+    <color name="viewwhite">#efefef
+
+    </color>
+    <color name="viewblack">#1d1d1d</color>
+    <color name="tonescreenviewdark">#3a3a3a</color>
+    <color name="tonescreenviewlight">#b7b7b7</color>
+    <color name="rateusColor">#ffffff</color>
+    <color name="rateusColordark">#292929</color>
+
+    <style name="ThemeTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:buttonTint">@color/colorPrimary</item>
+        <item name="android:unselectedAlpha">0.1</item>
+    </style>
+
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme.Base.Light">
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="MyOverflowButtonStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:tint">#000000</item>
+    </style>
+
+    <style name="actiontheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:tint">#FFFFFF</item>
+    </style>
+    <!--    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">-->
+    <!--        <item name="android:progressDrawable">@drawable/food_rating_bar_full</item>-->
+
+    <!--    </style>-->
+
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:numStars">@integer/stars</item>
+    </style>
+
+    <color name="drawerbackgrounddark">#1d1d1d</color>
+    <color name="drawerbackgroundlight">#ffffff</color>
+    <color name="lightadbg">#F5F5F5</color>
+    <color name="darkadbg">#616161</color>
+    <color name="colorPrimaryVariant">#643835</color>
+
+    <integer name="stars">5</integer>
+
+    <style name="AdAttribution">
+        <item name="android:layout_width">@dimen/_50sdp</item>
+        <item name="android:layout_height">@dimen/_15sdp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+        <item name="android:textSize">11sp</item>
+        <item name="android:text">@string/ad_attribution</item>
+        <item name="android:background">#4C956C</item>
+        <item name="android:width">15dp</item>
+        <item name="android:height">15dp</item>
+    </style>
+
+    <string name="ad_attribution" translatable="false">AD</string>
+
+    <style name="AdsButtonStyle2" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/colorPrimaryVariant</item>
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="shapeAppearance">@style/AdsButtonShapeAppearance2</item>
+    </style>
+    <style name="AdsButtonShapeAppearance">
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+    </style>
+
+    <style name="AdsButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="background">@color/red</item>
+        <item name="backgroundTint">@color/red</item>
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="shapeAppearance">@style/AdsButtonShapeAppearance</item>
+    </style>
+<!--    <style name="AdsButtonStyle2" parent="Widget.MaterialComponents.Button">
+    <item name="android:textColor">@color/white</item>
+    <item name="backgroundTint">@color/colorPrimaryVariant</item>
+    <item name="rippleColor">@color/colorPrimary</item>
+    <item name="shapeAppearance">@style/AdsButtonShapeAppearance2</item>
+    </style>-->
+    <style name="AdsButtonShapeAppearance2">
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+    </style>
+
+</resources>
+
+
+
