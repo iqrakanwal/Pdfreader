@@ -431,6 +431,10 @@ class Showingclass : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteLi
                 bottomSheetDialog.show()
                 true
             }
+            R.id.print->{
+                printFile(file!!)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -577,32 +581,12 @@ class Showingclass : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteLi
     }
 
     fun printFile(file: File) {
-
-
-
-        //Toast.makeText(this, "${file}", Toast.LENGTH_SHORT).show()
         val printManager : PrintManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
         try {
             val printAdapter = PdfDocumentAdapter( File(uri?.getPath()))
             printManager.print("Document", printAdapter, PrintAttributes.Builder().build())
         } catch (e : Exception) {
-
         }
-
-
-
- /*       val service = PrintService(this)
-        service.showDocumentPreview(file, name)  // default name = "Document"
-
-
-      val mPrintDocumentAdapter: PrintDocumentAdapter = PrintDocumentAdapterHelper(file)
-          val printManager = getSystemService(PRINT_SERVICE) as PrintManager
-          val jobName: String = getString(R.string.app_name).toString() + " Document"
-          if (printManager != null) {
-              printManager.print(jobName, mPrintDocumentAdapter, null)
-
-          }*/
-
     }
 
     fun showPreview() {
