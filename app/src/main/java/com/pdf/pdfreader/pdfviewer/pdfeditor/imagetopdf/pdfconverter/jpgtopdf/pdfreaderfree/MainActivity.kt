@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     View.OnLongClickListener, OpenFileInt, createFileInterface {
     lateinit var mPath: String
     private var searchView: SearchView? = null
-
     private val SELECT_PICTURE = 1
     private var mImagesUri: ArrayList<String> = arrayListOf()
     lateinit var ads_container_layout: LinearLayout

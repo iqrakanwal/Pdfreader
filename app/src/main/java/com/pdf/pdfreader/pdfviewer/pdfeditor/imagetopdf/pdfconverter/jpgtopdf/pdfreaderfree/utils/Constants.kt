@@ -26,8 +26,6 @@ class Constants {
         const val PERMISSION_REQUEST_CODE = 3
         const val MY_PERMISSIONS_REQUEST_CAMERA = 1
         const val PURCHASED:String="purchase"
-
-
         const val DEFAULT_COMPRESSION = "DefaultCompression"
         const val SORTING_INDEX = "SORTING_INDEX"
         const val IMAGE_EDITOR_KEY = "first"
@@ -39,7 +37,6 @@ class Constants {
         const val DEFAULT_FONT_FAMILY = "TIMES_ROMAN"
         const val DEFAULT_FONT_COLOR_TEXT = "DefaultFontColor"
         const val DEFAULT_FONT_COLOR = -16777216
-
         // key for text to pdf (TTP) page color
         const val DEFAULT_PAGE_COLOR_TTP = "DefaultPageColorTTP"
 
