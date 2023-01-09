@@ -40,7 +40,7 @@ import java.io.FileOutputStream
 class AdfList(
     var pdffiles: ArrayList<PdfModels>,
     var optionsClick: OptionsClick,
-    var activity: MainActivity,
+    var activity:Activity ,
     var context: Activity,
     var onlongprocess: Onlongprocess? = null
 ) :
@@ -65,11 +65,11 @@ class AdfList(
             checkbox = itemView.findViewById(R.id.checkBox3)
             icon = itemView.findViewById(R.id.icon)
             checkbox?.setOnClickListener(this)
-            container?.setOnLongClickListener(activity)
+      //      container?.setOnLongClickListener(activity)
         }
 
         override fun onClick(p0: View?) {
-            p0?.let { activity.prepareselection(it, adapterPosition) }
+           // p0?.let { activity.prepareselection(it, adapterPosition) }
         }
 
     }
@@ -155,10 +155,10 @@ class AdfList(
             holder.icon?.setOnClickListener {
                 holder.container?.performClick()
             }
-            if (activity.is_in_action_mode) {
+         /*   if (activity.is_in_action_mode) {
                 holder.checkbox!!.visibility = View.VISIBLE
                 holder.menu?.setVisibility(View.GONE)
-            }
+            }*/
 
 
 

@@ -31,16 +31,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:progressTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+
 
 
     <TextView
@@ -83,7 +74,7 @@
             android:foregroundGravity="center"
             android:visibility="visible" />
 
-        <com.facebook.ads.NativeAdLayout
+  <com.facebook.ads.NativeAdLayout
             android:id="@+id/fb_native_place_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,13 +84,21 @@
     </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pdffileslist"
-        android:layout_width="match_parent"
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_4sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ads_container_layout" />
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ads_container_layout"/>
+
+
+
     <!-- <include
          android:id="@+id/include"
          layout="@layout/content_scrolling"
@@ -107,61 +106,34 @@
     <!--
     <include layout="@layout/ads_lauouyt"/>
     -->
-    <RelativeLayout
-        android:id="@+id/loading_adlayoutd"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D2000000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
-
-            <ProgressBar
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:indeterminateTint="@color/colorPrimary"
-                android:progressTint="@color/colorPrimary"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="Loading Ad"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-
-    </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginBottom="@dimen/_15sdp"
         android:backgroundTint="@color/purple_700"
         android:src="@drawable/fab_add"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <include
-        android:id="@+id/nofile"
-        layout="@layout/no_file_view"
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:background="?attr/colorPrimaryDark"
+        app:itemTextColor="?attr/textcolor"
+        app:itemIconTint="#FF321D"
+        android:layout_marginStart="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pdffileslist" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

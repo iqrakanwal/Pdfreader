@@ -12,7 +12,6 @@ import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pd
 
 
 class SettingsFragment : PreferenceFragmentCompat() {
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
         val themePreference = findPreference<ListPreference>(getString(R.string.theme_pref_key))!!

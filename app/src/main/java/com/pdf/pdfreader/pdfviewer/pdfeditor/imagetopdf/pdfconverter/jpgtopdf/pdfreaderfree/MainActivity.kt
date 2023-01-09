@@ -46,6 +46,7 @@ import androidx.core.view.GravityCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.createDataStore
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.lifecycleScope
@@ -57,6 +58,7 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.itextpdf.text.Document
 import com.itextpdf.text.Image
@@ -67,6 +69,8 @@ import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pd
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.adaptor.ThemeHelper
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.adsmanagement.*
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.dialog.*
+import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.fragments.HomeFragment
+import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.fragments.ToolFragment
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.interfaces.*
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.models.PdfModels
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.utils.*
@@ -78,8 +82,10 @@ import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pd
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.utils.Constants.Companion.pdfExtension
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.viewmodel.AdViewModel
 import com.pdf.pdfreader.pdfviewer.pdfeditor.imagetopdf.pdfconverter.jpgtopdf.pdfreaderfree.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.activity_main_screen2.*
 import kotlinx.android.synthetic.main.dialog_file_rename.view.*
 import kotlinx.android.synthetic.main.main_content.*
+import kotlinx.android.synthetic.main.main_content.toolbar
 import kotlinx.android.synthetic.main.nav_header_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 import kotlinx.android.synthetic.main.top_haeder.*
@@ -93,7 +99,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     Onlongprocess, OptionsClick, DeleteClickListener, OnBackpressListener, ThemeDailog,
-    View.OnLongClickListener, OpenFileInt, createFileInterface {
+    View.OnLongClickListener, OpenFileInt, createFileInterface ,  BottomNavigationView.OnNavigationItemSelectedListener  {
     lateinit var mPath: String
     private var searchView: SearchView? = null
     private val SELECT_PICTURE = 1
@@ -103,12 +109,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var navigationView: NavigationView
     lateinit var admob_native_place_holder: FrameLayout
     lateinit var fb_native_place_holder: NativeAdLayout
-    private lateinit var admobInterstitialAds: AdmobInterstitialAds
-    private lateinit var fbInterstitialAds: FbInterstitialAds
     lateinit var loading_layout: FrameLayout
     private lateinit var fbBannerAds: FbBannerAds
     private lateinit var admobBannerAds: AdmobBannerAds
-    var dir: File? = null
     private val MIN_CLICK_INTERVAL: Long = 600
     public var is_in_action_mode = false
     private val adViewModel: AdViewModel by viewModel()
@@ -122,12 +125,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val dataStore: DataStore<androidx.datastore.preferences.core.Preferences> =
         createDataStore(name = "ui_mode_preference")
     var fileUri: String? = null
-    var linearLayoutManager: LinearLayoutManager? = null
-    var apfadaptor: AdfList? = null
+
     private val model: MainViewModel by viewModel()
-    private var files: ArrayList<PdfModels>? = null
     private var mInterstitialAd: InterstitialAd? = null
     var bottomDialogFragment: ExitBottomSheet? = null
+    var bottomNavigationView: BottomNavigationView? = null
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -156,6 +158,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
+
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView?.setItemIconTintList(null);
+        loadFragment(HomeFragment())
+        bottomNavigationView?.setOnNavigationItemSelectedListener { item ->
+            var fragment: Fragment? = null
+            when (item.itemId) {
+                R.id.files -> {
+                    fragment = HomeFragment()
+                    toolbar.title = "Files"
+
+
+                }
+                R.id.tools -> {
+                    fragment = ToolFragment()
+                    toolbar.title = "Tools"
+
+
+                }
+            }
+            if (fragment != null) {
+                loadFragment(fragment)
+            }
+            true
+        };
         drawer_layout?.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
@@ -179,8 +206,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         model.registerOpenAds()
         //mainViewModel.call()
         if (checkPermission()) {
-            model.loadAllPdf(getDirectory())
-            setList()
+
             setNavigationViewListener()
             createRecyclarView()
         } else {
@@ -294,8 +320,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    private fun getPhotosForFile() {
 
+
+    fun loadFragment(fragment: Fragment?) {
+        supportFragmentManager.beginTransaction().replace(R.id.relativelayout, fragment!!).commit()
+    }
+    private fun getPhotosForFile() {
         getDefaultStorageLocation()
         val intent = Intent()
         intent.type = "image/*"
@@ -342,6 +372,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     }
+
+  /*   fun onNavigationItemSelected(item: MenuItem): Boolean {
+        var fragment: Fragment? = null
+        when (item.itemId) {
+            R.id.files -> {
+                fragment = HomeFragment()
+                toolbar.title = "Files"
+
+
+
+            }
+            R.id.tools -> {
+                fragment = ToolFragment()
+                toolbar.title = "Tools"
+
+
+            }
+        }
+        if (fragment != null) {
+            loadFragment(fragment)
+        }
+        return true    }
+
+    fun loadFragment(fragment: Fragment?) {
+        supportFragmentManager.beginTransaction().replace(R.id.relativelayout, fragment!!).commit()
+    }*/
+
 
     fun createPdfFile() {
         lifecycleScope.launch {
@@ -445,7 +502,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             override fun onQueryTextChange(query: String): Boolean {
-                filter(query)
+              //  filter(query)
                 return false
             }
         })
@@ -536,8 +593,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                     }
 
                                 }
-                                apfadaptor?.deleteFile(array)
-                                apfadaptor?.notifyDataSetChanged()
+                             //   apfadaptor?.deleteFile(array)
+                            //    apfadaptor?.notifyDataSetChanged()
                                 // shareFiless(array)
                                 clear_actio_mode()
 
@@ -614,53 +671,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    private fun setList() {
-        model.allPdfList.observe(this) {
-            //   runBlocking { kotlinx.coroutines.delay(1000) }
 
 
-            //  Log.e("list", "${it?.size}")
-            files = arrayListOf()
-            files?.clear()
-            if (it.size != 0) {
-                for (item: PdfModels in it) {
-                    files?.add(item)
-                }
-                nofile.visibility = View.GONE
-
-            } else {
-                nofile.visibility = View.VISIBLE
-            }
-
-            apfadaptor = AdfList(files!!, this, this, this)
-            linearLayoutManager = LinearLayoutManager(this)
-            pdffileslist.adapter = apfadaptor
-            pdffileslist.layoutManager = linearLayoutManager
-            /*        pdffileslist.setOnLongClickListener(object :View.OnLongClickListener{
-                        override fun onLongClick(p0: View?): Boolean {
-
-
-                        }
-
-
-                    })*/
-            progress.visibility = View.GONE
-
-
-        }
-
-
-    }
-
-    private fun getDirectory(): File {
-        val externalStorageDirectory = File(System.getenv("EXTERNAL_STORAGE"))
-        dir = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
-            File(externalStorageDirectory.toString())
-        } else {
-            File(Environment.getExternalStorageDirectory().toString())
-        }
-        return dir as File
-    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -785,7 +797,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val newFile = File(newFileName)
         val newFilePath = newFile.path
         return if (oldFile.renameTo(newFile)) {
-            apfadaptor?.renameFile(true, position, newName, newFilePath)
+           // apfadaptor?.renameFile(true, position, newName, newFilePath)
             /*        mainViewModel.allPdfs.value = mainViewModel.allPdfs.value?.mapIndexed { index, allPdfModel ->
                         if (index != position) {
                             allPdfModel
@@ -914,6 +926,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         editNameDialogFragment.show(fm, "DeleteDailog")
     }
 
+    override fun onOpen(uri: Uri) {
+
+    }
+
 
     fun clicked(clicked: Boolean, position: Int, uri: Uri) {
         try {
@@ -951,9 +967,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    override fun onOpen(uri: Uri) {
+/*    override fun onOpen(uri: Uri) {
 
-/*        if (facebookads) {
+*//*        if (facebookads) {
             fileUri = uri.toString()
             if (interstitialAd != null && interstitialAd!!.isAdLoaded()) {
                 interstitialAd?.show()
@@ -980,7 +996,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
 
-        }*/
+        }*//*
         fileUri = uri.toString()
 
         if (admobInterstitialAds.isInterstitialLoaded() || fbInterstitialAds.isInterstitialAdsLoaded() && isInternetConnected(
@@ -997,7 +1013,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             intent.putExtra("Character", uri.toString())
             startActivity(intent)
         }
-    }
+    }*/
 
     override fun OnRenaming(filepath: String, position: Int, name: String) {
         val renameFileBuilder: AlertDialog.Builder?
@@ -1104,8 +1120,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (requestCode == 2296) {
             if (SDK_INT >= Build.VERSION_CODES.R) {
                 if (Environment.isExternalStorageManager()) {
-                    model.loadAllPdf(getDirectory())
-                    setList()
+                  //  model.loadAllPdf(getDirectory())
+                 //   setList()
                     setNavigationViewListener()
                     createRecyclarView()
 
@@ -1161,29 +1177,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun filter(text: String) {
-        // creating a new array list to filter our data.
-        val filteredlist: ArrayList<PdfModels> = ArrayList()
 
-        // running a for loop to compare elements.
-        for (item in files!!) {
-            // checking if the entered string matched with any item of our recycler view.
-            if (item.filesName.toLowerCase().contains(text.toLowerCase())) {
-                // if the item is matched we are
-                // adding it to our filtered list.
-                filteredlist.add(item)
-            }
-        }
-        if (filteredlist.isEmpty()) {
-            // if no item is added in filtered list we are
-            // displaying a toast message as no data found.
-            //  Toast.makeText(this, "No Data Found..", Toast.LENGTH_SHORT).show()
-        } else {
-            // at last we are passing that filtered
-            // list to our adapter class.
-            apfadaptor!!.filterList(filteredlist)
-        }
-    }
 
 /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
     // below line is to get our inflater
@@ -1369,8 +1363,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val READ_EXTERNAL_STORAGE = grantResults[0] == PackageManager.PERMISSION_GRANTED
                 val WRITE_EXTERNAL_STORAGE = grantResults[1] == PackageManager.PERMISSION_GRANTED
                 if (READ_EXTERNAL_STORAGE && WRITE_EXTERNAL_STORAGE) {
-                    model.loadAllPdf(getDirectory())
-                    setList()
+                 //   model.loadAllPdf(getDirectory())
+                  //  setList()
                     setNavigationViewListener()
                     createRecyclarView()
                 } else {
@@ -1422,8 +1416,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (!is_in_action_mode) {
             is_in_action_mode = true
             count = count + 1
-            files!![position]?.isSelected = true
-            apfadaptor?.notifyDataSetChanged()
+      //      files!![position]?.isSelected = true
+          //  apfadaptor?.notifyDataSetChanged()
         }
 
     }
@@ -1432,11 +1426,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val v = check as CheckBox
         if (v.isChecked) {
             count++
-            files?.get(positon)?.isSelected = true
+        //    files?.get(positon)?.isSelected = true
             Toast.makeText(this, "" + count, Toast.LENGTH_SHORT).show()
         } else if (!v.isChecked) {
             count--
-            files?.get(positon)?.isSelected = false
+         //   files?.get(positon)?.isSelected = false
             Toast.makeText(this, "" + count, Toast.LENGTH_SHORT).show()
         }
     }
@@ -1446,14 +1440,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val v = check as CheckBox
         if (v.isChecked) {
             count = count + 1
-            selectionlist.add(files?.get(position))
+       //     selectionlist.add(files?.get(position))
             updateCounter(count)
-            files?.get(position)?.isSelected = true
+       //     files?.get(position)?.isSelected = true
         } else if (!v.isChecked) {
-            selectionlist.remove(files?.get(position))
+        //    selectionlist.remove(files?.get(position))
             count = count - 1
             updateCounter(count)
-            files?.get(position)?.isSelected = false
+          //  files?.get(position)?.isSelected = false
         }
     }
 
@@ -1476,10 +1470,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         counter!!.text = "0 item Selected"
         count = 0
         selectionlist.clear()
-        for (i in files?.indices!!) {
+    /*    for (i in files?.indices!!) {
             files!![i]?.isSelected = false
-        }
-        apfadaptor?.notifyDataSetChanged()
+        }*/
+      //  apfadaptor?.notifyDataSetChanged()
     }
 
     override fun delete() {
@@ -1511,7 +1505,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             is_in_action_mode = true
             counter!!.visibility = View.VISIBLE
             counter!!.text = "0 item Selected"
-            apfadaptor?.notifyDataSetChanged()
+         //   apfadaptor?.notifyDataSetChanged()
             // supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }
         return true
@@ -1545,9 +1539,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         let { mActivity ->
             fbBannerAds = FbBannerAds(mActivity)
             admobBannerAds = AdmobBannerAds(mActivity)
-            fbInterstitialAds = FbInterstitialAds(this)
-            admobInterstitialAds = AdmobInterstitialAds(this)
-            loadInterstitialAd()
+
+           // loadInterstitialAd()
             when (prioritySmallNative) {
                 1 -> {
                     Log.d(AD_TAG, "Call FB Native")
@@ -1614,119 +1607,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     @RequiresApi(Build.VERSION_CODES.M)
 
 
-    private fun loadInterstitialAd() {
-        let { mActivity ->
-            Log.i("projjljlj", "${RemoteConfigConstants.priorityInterstitial}")
-            when (RemoteConfigConstants.priorityInterstitial) {
-                1 -> {
-                    Log.d(GeneralUtils.AD_TAG, "Call FB Interstitial")
-                    fbInterstitialAds.loadInterstitialAd(
-                        mActivity.resources.getString(R.string.facebook_interstital),
-                        RemoteConfigConstants.interstitialActive,
-                        false,
-                        GeneralUtils.isInternetConnected(mActivity),
-                        object : FbInterstitialOnCallBack {
-                            override fun onInterstitialDisplayed() {}
 
-                            override fun onInterstitialDismissed() {
-                                val currentClickTime = SystemClock.uptimeMillis()
-                                val elapsedTime = currentClickTime - mLastClickTime
-                                mLastClickTime = currentClickTime
-                                if (elapsedTime <= MIN_CLICK_INTERVAL) return
-                                val intent = Intent(applicationContext, Showingclass::class.java)
-                                intent.putExtra("Character", fileUri.toString())
-                                startActivity(intent)
-                            }
-
-                            override fun onError() {}
-
-                            override fun onAdLoaded() {}
-
-                            override fun onAdClicked() {}
-
-                            override fun onLoggingImpression() {}
-
-                        })
-                }
-                2 -> {
-                    Log.d(GeneralUtils.AD_TAG, "Call Admob Interstitial")
-                    admobInterstitialAds.loadInterstitialAd(
-                        mActivity.resources.getString(R.string.Interstitial),
-                        RemoteConfigConstants.interstitialActive,
-                        false,
-                        GeneralUtils.isInternetConnected(mActivity),
-                        object : InterstitialOnLoadCallBack {
-                            override fun onAdFailedToLoad(adError: String) {
-                                Log.e("admondsad", "onAdFailedToLoad")
-                            }
-
-                            override fun onAdLoaded() {
-
-                                Log.e("admondsad", "load")
-
-
-                            }
-
-                        })
-                }
-                else -> {}
-            }
-        }
-    }
-
-    private fun showInterstitialAd() {
-        let { mActivity ->
-            Log.i("projjljlj", "${RemoteConfigConstants.priorityInterstitial}")
-            when (RemoteConfigConstants.priorityInterstitial) {
-                1 -> {
-                    loading_adlayoutd.visibility =
-                        View.VISIBLE
-                    Handler().postDelayed({
-                        loading_adlayoutd.visibility =
-                            View.GONE
-                        fbInterstitialAds.showInterstitialAds()
-                    }, 800)
-                }
-                2 -> {
-                    loading_adlayoutd.visibility =
-                        View.VISIBLE
-                    Handler().postDelayed({
-                        loading_adlayoutd.visibility =
-                            View.GONE
-                        admobInterstitialAds.showInterstitialAd(object :
-                            InterstitialOnShowCallBack {
-                            override fun onAdDismissedFullScreenContent() {
-                                val intent = Intent(applicationContext, Showingclass::class.java)
-                                intent.putExtra("Character", fileUri.toString())
-                                startActivity(intent)
-
-                                loadInterstitialAd()
-
-
-                                //view?.findNavController()?.navigate(R.id.action_navigation_indoor_exercise_to_navigation_exercise_start)
-                            }
-
-                            override fun onAdFailedToShowFullScreenContent() {
-                            }
-
-                            override fun onAdShowedFullScreenContent() {
-                                //mInterstitialAd = null
-                            }
-
-                            override fun onAdImpression() {
-
-
-                            }
-
-                        })
-                    }, 800)
-
-
-                }
-                else -> {}
-            }
-        }
-    }
 
     override fun open(path: String) {
 
