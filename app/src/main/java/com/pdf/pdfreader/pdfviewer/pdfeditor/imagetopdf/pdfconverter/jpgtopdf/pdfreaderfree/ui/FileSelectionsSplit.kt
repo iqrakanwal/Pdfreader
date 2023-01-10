@@ -28,18 +28,14 @@ class FileSelectionsSplit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_file_selections_split)
-
         splitbutt.setOnClickListener {
             if (selectionlist.size != 0) {
                 Toast.makeText(this, "Please select ${selectionlist.size}", Toast.LENGTH_SHORT).show()
                 spliteFile(selectionlist.get(0)?.filePath.toString())
             } else {
-                Toast.makeText(this, "Please select ${selectionlist.size}", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this, "Please select ${selectionlist.size}", Toast.LENGTH_SHORT).show()
             }
         }
-
-
         model.loadAllPdf(getDirectory())
         model.allPdfList.observe(this) {
             if (it != null) {
@@ -49,7 +45,6 @@ class FileSelectionsSplit : AppCompatActivity() {
                 splite.layoutManager = linearLayoutManager
                 splite.adapter = fileSelectionList
             }
-
         }
     }
     private fun getDirectory(): File {
@@ -61,7 +56,6 @@ class FileSelectionsSplit : AppCompatActivity() {
         }
         return dir as File
     }
-
 
     fun prepareselection(check: View, position: Int) {
         val v = check as CheckBox

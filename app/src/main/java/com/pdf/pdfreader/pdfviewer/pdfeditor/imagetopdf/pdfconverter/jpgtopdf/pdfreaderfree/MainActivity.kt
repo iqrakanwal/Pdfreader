@@ -122,10 +122,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var interstitialAd: com.facebook.ads.InterstitialAd? = null
     lateinit var inAppPurchase: InAppPurchase
     val PERMISSION_REQUEST_CODE = 2296
-    private val dataStore: DataStore<androidx.datastore.preferences.core.Preferences> =
-        createDataStore(name = "ui_mode_preference")
+    private val dataStore: DataStore<androidx.datastore.preferences.core.Preferences> = createDataStore(name = "ui_mode_preference")
     var fileUri: String? = null
-
     private val model: MainViewModel by viewModel()
     private var mInterstitialAd: InterstitialAd? = null
     var bottomDialogFragment: ExitBottomSheet? = null
